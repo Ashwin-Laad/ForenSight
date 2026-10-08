@@ -1,4 +1,4 @@
-# ForenSight 🛡️
+# ForenSight 
 ### A Forensic-Ready Hybrid Intrusion Detection System
 
 > **Detect it. Explain it. Prove it.**
@@ -29,7 +29,7 @@
 
 ---
 
-## 🔍 What the project does
+##  What the project does
 
 Most intrusion detection systems (IDS) have three weaknesses:
 
@@ -41,7 +41,7 @@ Most intrusion detection systems (IDS) have three weaknesses:
 
 ---
 
-## 🎓 How it maps to Unit 4
+##  How it maps to Unit 4
 
 | Unit 4 topic | Where it appears in the code |
 |---|---|
@@ -52,7 +52,7 @@ Most intrusion detection systems (IDS) have three weaknesses:
 
 ---
 
-## 🏗️ System architecture
+##  System architecture
 
 ```
           ┌───────────────────────────────────────┐
@@ -92,7 +92,7 @@ Most intrusion detection systems (IDS) have three weaknesses:
 
 ---
 
-## 📁 Project structure
+## Project structure
 
 ```
 ForenSight/
@@ -108,7 +108,7 @@ ForenSight/
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 | Item | Version |
 |---|---|
@@ -123,7 +123,7 @@ Python libraries (installed automatically from `requirements.txt`):
 
 ---
 
-## 💻 Installation
+##  Installation
 
 ### 1. Get the project
 Unzip the project folder and open a terminal **inside** the `ForenSight` folder.
@@ -168,7 +168,7 @@ Dataset ready.
 
 ---
 
-## ▶️ How to run
+##  How to run
 
 ```bash
 python forensight.py
@@ -176,7 +176,7 @@ python forensight.py
 
 That's it. The single command runs the **entire pipeline**: training, detection, explanation, evidence logging, tamper testing, evaluation and figure generation.
 
-⏱️ Runtime: **about 2–4 minutes** on a normal laptop.
+ Runtime: **about 2–4 minutes** on a normal laptop.
 
 Optional: choose your own input and output folders:
 ```bash
@@ -189,7 +189,7 @@ python forensight.py data results_run2
 
 ---
 
-## 📟 Expected output
+##  Expected output
 
 ```
 [ForenSight] Loading NSL-KDD ...
@@ -219,13 +219,13 @@ python forensight.py data results_run2
  All outputs written to: .../ForenSight/out
 ```
 
-✅ **Accuracy numbers are reproducible**: the random seed is fixed at 42, so you get the same detection results as in the report.
-⚠️ Only the **timing** values (µs per alert) differ from machine to machine.
+ **Accuracy numbers are reproducible**: the random seed is fixed at 42, so you get the same detection results as in the report.
+ Only the **timing** values (µs per alert) differ from machine to machine.
 (Tiny differences in the last decimal are possible with very different library versions.)
 
 ---
 
-## 📂 Output files explained
+##  Output files explained
 
 All files are written to `out/`:
 
@@ -252,7 +252,7 @@ Each record's `prev_hash` equals the previous record's `hash`. That link is what
 
 ---
 
-## 🧠 How the code works (step by step)
+##  How the code works (step by step)
 
 `forensight.py` is organised into seven clearly commented stages:
 
@@ -304,7 +304,7 @@ ALERT  if  (any rule fires)  OR  (XGBoost score ≥ t)  OR  (anomaly score ≥ �
 
 ---
 
-## 📊 Results
+##  Results
 
 | Detector | Accuracy | Recall | F1 | False-positive rate |
 |---|---|---|---|---|
@@ -322,7 +322,7 @@ ALERT  if  (any rule fires)  OR  (XGBoost score ≥ t)  OR  (anomaly score ≥ �
 
 ---
 
-## 🛠️ Customising the project
+##  Customising the project
 
 | Want to… | Change this in `forensight.py` |
 |---|---|
@@ -334,7 +334,7 @@ ALERT  if  (any rule fires)  OR  (XGBoost score ≥ t)  OR  (anomaly score ≥ �
 
 ---
 
-## ❓ Troubleshooting
+##  Troubleshooting
 
 | Problem | Fix |
 |---|---|
@@ -348,7 +348,7 @@ ALERT  if  (any rule fires)  OR  (XGBoost score ≥ t)  OR  (anomaly score ≥ �
 
 ---
 
-## ⚠️ Limitations and future work
+##  Limitations and future work
 
 - **Dataset age:** NSL-KDD comes from 1998 traffic with no encryption. Next step: CIC-IDS2017, UNSW-NB15 and live campus traffic (Zeek logs).
 - **Blind spot:** SNMP attacks (`snmpguess`, `snmpgetattack`) look like normal flows, so no detector catches them without payload inspection.
@@ -357,7 +357,7 @@ ALERT  if  (any rule fires)  OR  (XGBoost score ≥ t)  OR  (anomaly score ≥ �
 
 ---
 
-## 📚 References
+##  References
 
 1. M. Tavallaee, E. Bagheri, W. Lu, A. A. Ghorbani, "A detailed analysis of the KDD CUP 99 data set," *IEEE CISDA*, 2009.
 2. T. Chen, C. Guestrin, "XGBoost: A scalable tree boosting system," *ACM SIGKDD*, 2016.
