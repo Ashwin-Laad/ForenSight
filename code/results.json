@@ -1,0 +1,771 @@
+{
+ "dataset": {
+  "train": 125973,
+  "test": 22544,
+  "test21": 11850,
+  "train_cat": {
+   "Normal": 67343,
+   "DoS": 45927,
+   "Probe": 11656,
+   "R2L": 995,
+   "U2R": 52
+  },
+  "test_cat": {
+   "Normal": 9711,
+   "DoS": 7460,
+   "R2L": 2885,
+   "Probe": 2421,
+   "U2R": 67
+  },
+  "novel_types": [
+   "apache2",
+   "httptunnel",
+   "mailbomb",
+   "mscan",
+   "named",
+   "processtable",
+   "ps",
+   "saint",
+   "sendmail",
+   "snmpgetattack",
+   "snmpguess",
+   "sqlattack",
+   "udpstorm",
+   "worm",
+   "xlock",
+   "xsnoop",
+   "xterm"
+  ],
+  "n_novel_types": 17,
+  "n_novel_records": 3750,
+  "train_types": 22,
+  "test_types": 37
+ },
+ "n_features_after_encoding": 121,
+ "signature": {
+  "test": {
+   "acc": 0.6518,
+   "prec": 0.963,
+   "rec": 0.4038,
+   "f1": 0.569,
+   "fpr": 0.0205,
+   "tp": 5182,
+   "fp": 199,
+   "fn": 7651,
+   "tn": 9512
+  },
+  "test21": {
+   "acc": 0.5242,
+   "prec": 0.9591,
+   "rec": 0.4373,
+   "f1": 0.6007,
+   "fpr": 0.0841,
+   "tp": 4241,
+   "fp": 181,
+   "fn": 5457,
+   "tn": 1971
+  },
+  "cat": {
+   "DoS": 0.3899,
+   "Probe": 0.5204,
+   "R2L": 0.3386,
+   "U2R": 0.5373,
+   "Normal_FPR": 0.0205,
+   "known_attacks": 0.4406,
+   "novel_attacks": 0.3147
+  },
+  "rules": [
+   {
+    "id": "SIG-01",
+    "name": "SYN flood (half-open connections)",
+    "attck": "T1498/T1499",
+    "hits": 1492,
+    "precision": 1.0
+   },
+   {
+    "id": "SIG-02",
+    "name": "ICMP echo-reply flood (Smurf)",
+    "attck": "T1498",
+    "hits": 594,
+    "precision": 0.9495
+   },
+   {
+    "id": "SIG-03",
+    "name": "Malformed / overlapping fragments (Teardrop, Pod)",
+    "attck": "T1499",
+    "hits": 100,
+    "precision": 0.48
+   },
+   {
+    "id": "SIG-04",
+    "name": "LAND attack (src == dst)",
+    "attck": "T1499",
+    "hits": 7,
+    "precision": 1.0
+   },
+   {
+    "id": "SIG-05",
+    "name": "Port scan / sweep (REJ/RSTO burst)",
+    "attck": "T1046",
+    "hits": 1201,
+    "precision": 0.955
+   },
+   {
+    "id": "SIG-06",
+    "name": "Host sweep (ICMP to many hosts)",
+    "attck": "T1018",
+    "hits": 177,
+    "precision": 0.9322
+   },
+   {
+    "id": "SIG-07",
+    "name": "Brute-force login (failed logins)",
+    "attck": "T1110",
+    "hits": 478,
+    "precision": 0.9895
+   },
+   {
+    "id": "SIG-08",
+    "name": "Root shell obtained (privilege escalation)",
+    "attck": "T1068",
+    "hits": 55,
+    "precision": 0.6727
+   },
+   {
+    "id": "SIG-09",
+    "name": "Unexpected su / root activity in session",
+    "attck": "T1548",
+    "hits": 26,
+    "precision": 0.8462
+   },
+   {
+    "id": "SIG-10",
+    "name": "Oversized HTTP request (Back / web exploit)",
+    "attck": "T1190",
+    "hits": 816,
+    "precision": 0.9926
+   },
+   {
+    "id": "SIG-11",
+    "name": "Guest FTP write (warez upload)",
+    "attck": "T1105",
+    "hits": 639,
+    "precision": 0.9311
+   },
+   {
+    "id": "SIG-12",
+    "name": "High 'hot' indicator count in session",
+    "attck": "T1059",
+    "hits": 39,
+    "precision": 0.2821
+   }
+  ],
+  "latency_us": 0.52,
+  "val": {
+   "acc": 0.8635,
+   "prec": 0.9735,
+   "rec": 0.7266,
+   "f1": 0.8321,
+   "fpr": 0.0172,
+   "tp": 8520,
+   "fp": 232,
+   "fn": 3206,
+   "tn": 13237
+  }
+ },
+ "ml": {
+  "Logistic Regression": {
+   "val": {
+    "acc": 0.9829,
+    "prec": 0.9865,
+    "rec": 0.9765,
+    "f1": 0.9815,
+    "fpr": 0.0117,
+    "tp": 11451,
+    "fp": 157,
+    "fn": 275,
+    "tn": 13312,
+    "auc": 0.998
+   },
+   "test": {
+    "acc": 0.7456,
+    "prec": 0.9127,
+    "rec": 0.6115,
+    "f1": 0.7324,
+    "fpr": 0.0773,
+    "tp": 7848,
+    "fp": 751,
+    "fn": 4985,
+    "tn": 8960,
+    "auc": 0.7757
+   },
+   "test21": {
+    "acc": 0.5173,
+    "prec": 0.8651,
+    "rec": 0.486,
+    "f1": 0.6223,
+    "fpr": 0.3415,
+    "tp": 4713,
+    "fp": 735,
+    "fn": 4985,
+    "tn": 1417,
+    "auc": 0.5437
+   },
+   "cat": {
+    "DoS": 0.7956,
+    "Probe": 0.76,
+    "R2L": 0.0173,
+    "U2R": 0.3433,
+    "Normal_FPR": 0.0773,
+    "known_attacks": 0.742,
+    "novel_attacks": 0.2955
+   },
+   "fit_s": 2.33,
+   "latency_us": 0.361
+  },
+  "Decision Tree": {
+   "val": {
+    "acc": 0.998,
+    "prec": 0.9974,
+    "rec": 0.9982,
+    "f1": 0.9978,
+    "fpr": 0.0022,
+    "tp": 11705,
+    "fp": 30,
+    "fn": 21,
+    "tn": 13439,
+    "auc": 0.9988
+   },
+   "test": {
+    "acc": 0.7894,
+    "prec": 0.913,
+    "rec": 0.6963,
+    "f1": 0.7901,
+    "fpr": 0.0876,
+    "tp": 8936,
+    "fp": 851,
+    "fn": 3897,
+    "tn": 8860,
+    "auc": 0.8273
+   },
+   "test21": {
+    "acc": 0.6033,
+    "prec": 0.8783,
+    "rec": 0.5982,
+    "f1": 0.7116,
+    "fpr": 0.3736,
+    "tp": 5801,
+    "fp": 804,
+    "fn": 3897,
+    "tn": 1348,
+    "auc": 0.6632
+   },
+   "cat": {
+    "DoS": 0.8358,
+    "Probe": 0.81,
+    "R2L": 0.2482,
+    "U2R": 0.3582,
+    "Normal_FPR": 0.0876,
+    "known_attacks": 0.7843,
+    "novel_attacks": 0.4832
+   },
+   "fit_s": 1.36,
+   "latency_us": 0.271
+  },
+  "Random Forest": {
+   "val": {
+    "acc": 0.9987,
+    "prec": 0.9996,
+    "rec": 0.9977,
+    "f1": 0.9986,
+    "fpr": 0.0004,
+    "tp": 11699,
+    "fp": 5,
+    "fn": 27,
+    "tn": 13464,
+    "auc": 1.0
+   },
+   "test": {
+    "acc": 0.7872,
+    "prec": 0.9698,
+    "rec": 0.6462,
+    "f1": 0.7756,
+    "fpr": 0.0266,
+    "tp": 8293,
+    "fp": 258,
+    "fn": 4540,
+    "tn": 9453,
+    "auc": 0.9587
+   },
+   "test21": {
+    "acc": 0.5951,
+    "prec": 0.9524,
+    "rec": 0.5319,
+    "f1": 0.6825,
+    "fpr": 0.1199,
+    "tp": 5158,
+    "fp": 258,
+    "fn": 4540,
+    "tn": 1894,
+    "auc": 0.8007
+   },
+   "cat": {
+    "DoS": 0.8279,
+    "Probe": 0.8046,
+    "R2L": 0.0551,
+    "U2R": 0.1493,
+    "Normal_FPR": 0.0266,
+    "known_attacks": 0.7702,
+    "novel_attacks": 0.3459
+   },
+   "fit_s": 7.88,
+   "latency_us": 8.647
+  },
+  "MLP (64-32)": {
+   "val": {
+    "acc": 0.9973,
+    "prec": 0.9985,
+    "rec": 0.9956,
+    "f1": 0.9971,
+    "fpr": 0.0013,
+    "tp": 11674,
+    "fp": 17,
+    "fn": 52,
+    "tn": 13452,
+    "auc": 1.0
+   },
+   "test": {
+    "acc": 0.796,
+    "prec": 0.9269,
+    "rec": 0.6966,
+    "f1": 0.7954,
+    "fpr": 0.0726,
+    "tp": 8939,
+    "fp": 705,
+    "fn": 3894,
+    "tn": 9006,
+    "auc": 0.9031
+   },
+   "test21": {
+    "acc": 0.6121,
+    "prec": 0.892,
+    "rec": 0.5985,
+    "f1": 0.7163,
+    "fpr": 0.3267,
+    "tp": 5804,
+    "fp": 703,
+    "fn": 3894,
+    "tn": 1449,
+    "auc": 0.7487
+   },
+   "cat": {
+    "DoS": 0.8755,
+    "Probe": 0.843,
+    "R2L": 0.1192,
+    "U2R": 0.3433,
+    "Normal_FPR": 0.0726,
+    "known_attacks": 0.7854,
+    "novel_attacks": 0.4813
+   },
+   "fit_s": 14.14,
+   "latency_us": 0.883
+  },
+  "XGBoost": {
+   "val": {
+    "acc": 0.9992,
+    "prec": 0.9996,
+    "rec": 0.9988,
+    "f1": 0.9992,
+    "fpr": 0.0004,
+    "tp": 11712,
+    "fp": 5,
+    "fn": 14,
+    "tn": 13464,
+    "auc": 1.0
+   },
+   "test": {
+    "acc": 0.792,
+    "prec": 0.9687,
+    "rec": 0.6558,
+    "f1": 0.7821,
+    "fpr": 0.028,
+    "tp": 8416,
+    "fp": 272,
+    "fn": 4417,
+    "tn": 9439,
+    "auc": 0.966
+   },
+   "test21": {
+    "acc": 0.6044,
+    "prec": 0.9512,
+    "rec": 0.5445,
+    "f1": 0.6926,
+    "fpr": 0.1259,
+    "tp": 5281,
+    "fp": 271,
+    "fn": 4417,
+    "tn": 1881,
+    "auc": 0.8204
+   },
+   "cat": {
+    "DoS": 0.872,
+    "Probe": 0.7076,
+    "R2L": 0.0648,
+    "U2R": 0.1642,
+    "Normal_FPR": 0.028,
+    "known_attacks": 0.7736,
+    "novel_attacks": 0.3704
+   },
+   "fit_s": 5.08,
+   "latency_us": 3.172
+  }
+ },
+ "iforest": {
+  "thr": 0.4539,
+  "test": {
+   "acc": 0.8235,
+   "prec": 0.9686,
+   "rec": 0.7132,
+   "f1": 0.8215,
+   "fpr": 0.0306,
+   "tp": 9152,
+   "fp": 297,
+   "fn": 3681,
+   "tn": 9414,
+   "auc": 0.9561
+  },
+  "test21": {
+   "acc": 0.6648,
+   "prec": 0.9539,
+   "rec": 0.6204,
+   "f1": 0.7518,
+   "fpr": 0.1352,
+   "tp": 6017,
+   "fp": 291,
+   "fn": 3681,
+   "tn": 1861,
+   "auc": 0.7831
+  },
+  "cat": {
+   "DoS": 0.8617,
+   "Probe": 0.9822,
+   "R2L": 0.1088,
+   "U2R": 0.4776,
+   "Normal_FPR": 0.0306,
+   "known_attacks": 0.7346,
+   "novel_attacks": 0.6613
+  }
+ },
+ "hybrid": {
+  "xgb_thr": 0.45,
+  "iso_quantile": 0.99,
+  "iso_thr": 0.5038,
+  "test": {
+   "acc": 0.8723,
+   "prec": 0.9648,
+   "rec": 0.805,
+   "f1": 0.8777,
+   "fpr": 0.0388,
+   "tp": 10331,
+   "fp": 377,
+   "fn": 2502,
+   "tn": 9334,
+   "auc": 0.9565
+  },
+  "test21": {
+   "acc": 0.7586,
+   "prec": 0.9526,
+   "rec": 0.742,
+   "f1": 0.8342,
+   "fpr": 0.1664,
+   "tp": 7196,
+   "fp": 358,
+   "fn": 2502,
+   "tn": 1794,
+   "auc": 0.8052
+  },
+  "cat": {
+   "DoS": 0.9059,
+   "Probe": 0.9542,
+   "R2L": 0.4239,
+   "U2R": 0.597,
+   "Normal_FPR": 0.0388,
+   "known_attacks": 0.8808,
+   "novel_attacks": 0.6216
+  },
+  "val": {
+   "acc": 0.9861,
+   "prec": 0.9718,
+   "rec": 0.9991,
+   "f1": 0.9853,
+   "fpr": 0.0252,
+   "tp": 11716,
+   "fp": 340,
+   "fn": 10,
+   "tn": 13129
+  }
+ },
+ "ablation": {
+  "Signature only": {
+   "acc": 0.6518,
+   "prec": 0.963,
+   "rec": 0.4038,
+   "f1": 0.569,
+   "fpr": 0.0205,
+   "tp": 5182,
+   "fp": 199,
+   "fn": 7651,
+   "tn": 9512,
+   "novel": 0.3147
+  },
+  "XGBoost only (t=0.5)": {
+   "acc": 0.792,
+   "prec": 0.9687,
+   "rec": 0.6558,
+   "f1": 0.7821,
+   "fpr": 0.028,
+   "tp": 8416,
+   "fp": 272,
+   "fn": 4417,
+   "tn": 9439,
+   "novel": 0.3704
+  },
+  "XGBoost (tuned t)": {
+   "acc": 0.7932,
+   "prec": 0.9686,
+   "rec": 0.6581,
+   "f1": 0.7837,
+   "fpr": 0.0282,
+   "tp": 8446,
+   "fp": 274,
+   "fn": 4387,
+   "tn": 9437,
+   "novel": 0.3768
+  },
+  "Isolation Forest only": {
+   "acc": 0.7653,
+   "prec": 0.976,
+   "rec": 0.6024,
+   "f1": 0.745,
+   "fpr": 0.0196,
+   "tp": 7731,
+   "fp": 190,
+   "fn": 5102,
+   "tn": 9521,
+   "novel": 0.5392
+  },
+  "Signature + XGBoost": {
+   "acc": 0.8454,
+   "prec": 0.9647,
+   "rec": 0.7561,
+   "f1": 0.8478,
+   "fpr": 0.0366,
+   "tp": 9703,
+   "fp": 355,
+   "fn": 3130,
+   "tn": 9356,
+   "novel": 0.4552
+  },
+  "XGBoost + IForest": {
+   "acc": 0.8345,
+   "prec": 0.9689,
+   "rec": 0.7327,
+   "f1": 0.8344,
+   "fpr": 0.0311,
+   "tp": 9403,
+   "fp": 302,
+   "fn": 3430,
+   "tn": 9409,
+   "novel": 0.6176
+  },
+  "Full hybrid (Sig + XGB + IF)": {
+   "acc": 0.8723,
+   "prec": 0.9648,
+   "rec": 0.805,
+   "f1": 0.8777,
+   "fpr": 0.0388,
+   "tp": 10331,
+   "fp": 377,
+   "fn": 2502,
+   "tn": 9334,
+   "novel": 0.6216
+  }
+ },
+ "tier_attribution": {
+  "sig": 5182,
+  "ml_only": 4521,
+  "anom_only": 628,
+  "missed": 2502
+ },
+ "multiclass": {
+  "acc": 0.783,
+  "macro_f1": 0.5896,
+  "weighted_f1": 0.7454,
+  "per_class_f1": {
+   "Normal": 0.8061,
+   "DoS": 0.8978,
+   "Probe": 0.7562,
+   "R2L": 0.1467,
+   "U2R": 0.3409
+  },
+  "cm": [
+   [
+    9439,
+    61,
+    206,
+    3,
+    2
+   ],
+   [
+    1030,
+    6262,
+    168,
+    0,
+    0
+   ],
+   [
+    549,
+    166,
+    1706,
+    0,
+    0
+   ],
+   [
+    2641,
+    0,
+    11,
+    229,
+    4
+   ],
+   [
+    48,
+    0,
+    0,
+    4,
+    15
+   ]
+  ]
+ },
+ "shap_top": [
+  [
+   "src_bytes",
+   3.4166
+  ],
+  [
+   "dst_bytes",
+   1.2717
+  ],
+  [
+   "count",
+   1.0324
+  ],
+  [
+   "dst_host_srv_count",
+   0.9077
+  ],
+  [
+   "dst_host_same_src_port_rate",
+   0.809
+  ],
+  [
+   "dst_host_rerror_rate",
+   0.6414
+  ],
+  [
+   "service_private",
+   0.636
+  ],
+  [
+   "dst_host_same_srv_rate",
+   0.6024
+  ],
+  [
+   "dst_host_diff_srv_rate",
+   0.4637
+  ],
+  [
+   "hot",
+   0.4059
+  ],
+  [
+   "dst_host_count",
+   0.3855
+  ],
+  [
+   "logged_in",
+   0.3091
+  ],
+  [
+   "service_http",
+   0.3008
+  ],
+  [
+   "duration",
+   0.2771
+  ],
+  [
+   "service_ecr_i",
+   0.2641
+  ]
+ ],
+ "forensic_log": {
+  "alerts": 10708,
+  "build_s": 1.523,
+  "build_us_per_alert": 142.2,
+  "verify_s": 0.117,
+  "verify_us_per_alert": 10.92,
+  "verify_result": "ok",
+  "bytes": 4305793,
+  "bytes_per_alert": 402.1,
+  "anchors": 10,
+  "tamper": {
+   "Field modification": {
+    "detected": 200,
+    "trials": 200,
+    "localised": 200
+   },
+   "Record deletion": {
+    "detected": 200,
+    "trials": 200,
+    "localised": 200
+   },
+   "Record reordering": {
+    "detected": 200,
+    "trials": 200,
+    "localised": 200
+   },
+   "Modify + full re-hash": {
+    "detected": 200,
+    "trials": 200,
+    "localised": 200
+   },
+   "Tail truncation": {
+    "detected": 200,
+    "trials": 200,
+    "localised": 0
+   }
+  },
+  "sample": {
+   "seq": 0,
+   "ts": 1791436800.0,
+   "flow_id": 0,
+   "proto": "tcp",
+   "service": "private",
+   "flag": "REJ",
+   "src_bytes": 0,
+   "dst_bytes": 0,
+   "detector": "ML",
+   "rules": [],
+   "ml_score": 1.0,
+   "anomaly": 0.5669,
+   "severity": "HIGH",
+   "evidence": [
+    "src_bytes",
+    "count",
+    "service_private"
+   ],
+   "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+   "hash": "05c1f94a925086a6e9bf2b196911de4f9b74084f78b19152b50624586395698c"
+  }
+ }
+}
