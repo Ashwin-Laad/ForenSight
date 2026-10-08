@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 1. [What the project does](#-what-the-project-does)
 2. [How it maps to Unit 4](#-how-it-maps-to-unit-4)
 3. [System architecture](#-system-architecture)
