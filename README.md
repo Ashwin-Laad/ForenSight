@@ -41,9 +41,9 @@ Most intrusion detection systems (IDS) have three weaknesses:
 
 ---
 
-##  How it maps to Unit 4
+##  How it maps 
 
-| Unit 4 topic | Where it appears in the code |
+| topic | Where it appears in the code |
 |---|---|
 | **Intrusion Detection System**: signature vs anomaly, alerts, false positives | Tier 1 rules, Tier 2/3 models, fusion with a 3% false-positive budget |
 | **Malware Analysis**: attack behaviour, MITRE ATT&CK, zero-day | 12 rules describing attack/malware behaviour (root shell, brute force, warez upload), each tagged with an ATT&CK ID; evaluation on 17 unseen attack types |
