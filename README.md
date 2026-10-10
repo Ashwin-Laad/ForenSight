@@ -4,15 +4,11 @@
 > **Detect it. Explain it. Prove it.**
 > ForenSight catches network attacks with three complementary detectors, explains every alert, and stores each alert in a tamper-evident evidence log that an investigator can verify.
 
-**Course:** Cyber Security, Theory CA-2 (Part 2), Unit 4 Case Study
-**Group:** `[G__]`  |  **Members:** `[Member 1]`, `[Member 2]`, `[Member 3]`, `[Member 4]`
-**Faculty:** Dr. Pooja Bagane, Dr. Jitendra Rajpurohit
-
 ---
 
 ##  Table of Contents
 1. [What the project does](#-what-the-project-does)
-2. [How it maps to Unit 4](#-how-it-maps-to-unit-4)
+2. [How it maps to ]
 3. [System architecture](#-system-architecture)
 4. [Project structure](#-project-structure)
 5. [Requirements](#-requirements)
